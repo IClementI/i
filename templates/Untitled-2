@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirect to Instagram</title>
+</head>
+<body>
+  <h1>Redirect to Instagram</h1>
+
+  <button onclick="window.location.href = 'https://www.instagram.com';">Go to Instagram</button>
+
+  <script>
+    function redirectToInstagram() {
+      window.location.href = "https://www.instagram.com";
+    }
+  </script>
+</body>
+</html>
