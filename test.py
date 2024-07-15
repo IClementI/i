@@ -19,7 +19,7 @@ def serve_file(filename):
 
 @app.route('/')
 def serve_file2():
-	send_file('index.html')
+	send_file('/templates/index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
