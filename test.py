@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/<path:filename>')
+@app.route('/lol/')
 def serve_file(filename):
     # Print the application's root path
     print("App root path: " + app.root_path)
