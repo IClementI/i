@@ -12,10 +12,20 @@ def serve_index():
         # If any other error occurs, return a 500 error
         abort(500)
 
+
+# Function to log the POST request data
+def log_post_data(data1, data2):
+    timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    with open(LOG_FILE, 'a') as f:
+        f.write(f'{timestamp} - Data 1: {data1}, Data 2: {data2}\n')
+
 @app.route('/submit', methods=['POST'])
 def submit():
-    data1 = request.form.get('data1')
-    data2 = request.form.get('data2')
+    data1 = request.form.get('lol1')
+    data2 = request.form.get('lol6')
+    
+    log_post_data(data1, data2)
+    
     return send_file('index.html')
 
 
