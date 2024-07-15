@@ -12,6 +12,13 @@ def serve_index():
         # If any other error occurs, return a 500 error
         abort(500)
 
+@app.route('/submit', methods=['POST'])
+def submit():
+    data1 = request.form.get('data1')
+    data2 = request.form.get('data2')
+    return send_file('index.html')
+
+
 @app.route('/<path:filename>')
 def serve_file(filename):
     try:
