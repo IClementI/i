@@ -17,6 +17,10 @@ def serve_file(filename):
     else:
         abort(404)
 
+@app.route('/')
+def serve_file2(filename):
+	send_file('index.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
