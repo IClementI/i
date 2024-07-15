@@ -1,11 +1,22 @@
-from flask import Flask
+from flask import Flask, send_file, abort
+import os
 
 app = Flask(__name__)
 
 @app.route('/<path:filename>')
 def serve_file(filename):
-	
-	print("App route path: " + app.root_path)
-	
+    # Print the application's root path
+    print("App root path: " + app.root_path)
+    
+    # Determine and print the requested file path
+    file_path = os.path.join(app.root_path, filename)
+    print("Requested file path: " + file_path)
+    
+    if os.path.exists(file_path):
+        return send_file(file_path)
+    else:
+        abort(404)
+
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
+
