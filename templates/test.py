@@ -12,6 +12,7 @@ def serve_index():
         # If any other error occurs, return a 500 error
         abort(500)
 
+LOG_FILE = 'post_requests.log'
 
 # Function to log the POST request data
 def log_post_data(data1, data2):
