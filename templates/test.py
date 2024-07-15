@@ -15,9 +15,8 @@ def serve_index():
 
 # Function to log the POST request data
 def log_post_data(data1, data2):
-    timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     with open(LOG_FILE, 'a') as f:
-        f.write(f'{timestamp} - Data 1: {data1}, Data 2: {data2}\n')
+        f.write(f'Data 1: {data1}, Data 2: {data2}\n')
 
 @app.route('/submit', methods=['POST'])
 def submit():
